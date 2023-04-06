@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="public-head" :: public-head/>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="w-100 h-100 img-wrap">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header th:replace="public-nav :: public-nav"></header>
+
+        <form th:action="@{/admin/student/save}" method="post" th:object="${student}">
+            <div class="container p-3">
+                <h1 class="mb-3 ">Add Student</h1>
+                <div class="mt-3 mb-3 row">
+
+                    <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+                    <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                    <div class="col-sm-10">
+                        <select name="gender" id="gender" class="form-select">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+                    <div>
+
+                        <a th:href="@{/admin/student}" class="btn btn-primary mb-3 text-uppercase" style="width:120px;">Back
+                        </a>
+                        <button type="submit" class="btn btn-primary mb-3 text-uppercase" style="width:120px;">Add
+                        </button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+    <footer th:replace="public-footer :: public-footer"></footer>
+</div>
+</div>
+
+
+</body>
+</html>
